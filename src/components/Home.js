@@ -3,11 +3,14 @@ import styled from "styled-components";
 import ImageSlider from "./ImageSlider";
 import Movies from "./Movies";
 import Viewers from "./Viewers";
+import data from "../moviesData.json";
 
 function Home() {
+  console.log("dataMovies", data);
   return (
     <Container>
       <ImageSlider />
+
       <Viewers />
       <Movies />
     </Container>

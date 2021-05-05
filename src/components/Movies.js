@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-
+import data from "../moviesData.json";
 function Movies() {
   return (
     <Container>
-      <h4>Recommended for you</h4>
+      <h2>Recommended for you</h2>
       <Content>
         <Wraper>
           <img
@@ -43,7 +43,85 @@ function Movies() {
           />
         </Wraper>
       </Content>
-      <h4>New To Disney+</h4>
+      <h2>New To Disney+</h2>
+      <Content>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/116/980116-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_1_5x/sources/r1/cms/prod/525/820525-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/3076/183076-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5029/685029-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/1219/871219-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/655/980655-v"
+            alt=""
+          />
+        </Wraper>
+      </Content>
+      <h2>Documentaries</h2>
+      <Content>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/6162/676162-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/816/750816-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/3076/183076-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/3287/743287-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/910/740910-v"
+            alt=""
+          />
+        </Wraper>
+        <Wraper>
+          <img
+            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/8706/778706-v"
+            alt=""
+          />
+        </Wraper>
+      </Content>
+      <h2>Action and Adventure</h2>
       <Content>
         <Wraper>
           <img
