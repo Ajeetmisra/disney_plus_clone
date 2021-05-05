@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import data from "../moviesData.json";
 
 function Detail() {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    setMovies(data.movies);
+  }, []);
   return (
     <Container>
       <Background>
-        <img src="/images/11.jpg" />
+        <img src="/images/1.jpg" />
       </Background>
       {/* <ImageTitle>
         <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78" />
