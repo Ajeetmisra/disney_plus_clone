@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import data from "../moviesData.json";
+import { Link } from "react-router-dom";
+
 function Movies() {
+  const [moviess, setMoviess] = useState([]);
+  useEffect(() => {
+    setMoviess(data.movies);
+  }, []);
+  // console.log("data", data.movies[1].cardImg);
   return (
     <Container>
       <h2>Recommended for you</h2>
       <Content>
-        <Wraper>
-          <img
-            src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_1_5x/sources/r1/cms/prod/6370/936370-v"
-            alt=""
-          />
-        </Wraper>
-        <Wraper>
+        {moviess.map((movie) => (
+          <Wraper key={movie.id}>
+            <Link to={`/detail/${movie.id}`}>
+              <img src={movie.cardImg} />
+            </Link>
+          </Wraper>
+        ))}
+      </Content>
+      {/* <Wraper>
           <img
             src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/5126/675126-v"
             alt=""
@@ -158,8 +167,7 @@ function Movies() {
             src="https://img1.hotstarext.com/image/upload/f_auto,t_web_vl_3x/sources/r1/cms/prod/655/980655-v"
             alt=""
           />
-        </Wraper>
-      </Content>
+        </Wraper> */}
     </Container>
   );
 }

@@ -1,16 +1,26 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import data from "../moviesData.json";
+import { useParams } from "react-router-dom";
 
 function Detail() {
-  const [movies, setMovies] = useState([]);
+  const { id } = useParams();
+
+  const [moviess, setMoviess] = useState([]);
+  const [idval, setIdval] = useState(0);
+  const filteringData = (id) => {
+    var arr = data.movies.filter((movie) => movie.id === id);
+    setMoviess(arr);
+  };
   useEffect(() => {
-    setMovies(data.movies);
+    filteringData(id);
+    console.log("filtermovies", moviess);
   }, []);
+
   return (
     <Container>
       <Background>
-        <img src="/images/1.jpg" />
+        <img src="https://firebasestorage.googleapis.com/v0/b/disneyplusc-63fdf.appspot.com/o/images%2F5.jpg?alt=media&token=fd67e279-2c02-4368-93f5-1fea11f4c758" />
       </Background>
       {/* <ImageTitle>
         <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78" />
