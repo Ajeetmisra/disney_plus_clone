@@ -2,24 +2,45 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import data from "../moviesData.json";
 import { Link } from "react-router-dom";
+import db from "../firebase";
+import { Button, ProgressBar } from "react-bootstrap";
 
 function Movies() {
   const [moviess, setMoviess] = useState([]);
+  // useEffect(() => {
+  //   setMoviess(data.movies);
+  // }, []);
+
   useEffect(() => {
-    setMoviess(data.movies);
+    db.collection("movies").onSnapshot((snapshot) => {
+      let temMovies = snapshot.docs.map((doc) => {
+        return { id: doc.id, ...doc.data() };
+      });
+      setMoviess(temMovies);
+    });
   }, []);
-  // console.log("data", data.movies[1].cardImg);
   return (
     <Container>
       <h2>Recommended for you</h2>
       <Content>
-        {moviess.map((movie) => (
+        {moviess.length === 0 ? (
+          <h1>Loading Please Wait.....</h1>
+        ) : (
+          moviess.map((movie) => (
+            <Wraper key={movie.id}>
+              <Link to={`/detail/${movie.id}`}>
+                <img src={movie.cardImg} />
+              </Link>
+            </Wraper>
+          ))
+        )}
+        {/* {moviess.map((movie) => (
           <Wraper key={movie.id}>
             <Link to={`/detail/${movie.id}`}>
               <img src={movie.cardImg} />
             </Link>
           </Wraper>
-        ))}
+        ))} */}
       </Content>
       {/* <Wraper>
           <img

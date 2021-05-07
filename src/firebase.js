@@ -1,3 +1,4 @@
+import firebase from "firebase";
 var firebaseConfig = {
   apiKey: "AIzaSyDA3CasitHeoxzelNt98gFu1jrlRCH9yz4",
   authDomain: "disneyplusc-63fdf.firebaseapp.com",

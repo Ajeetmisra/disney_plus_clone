@@ -20,7 +20,7 @@ function Detail() {
   return (
     <Container>
       <Background>
-        <img src="https://firebasestorage.googleapis.com/v0/b/disneyplusc-63fdf.appspot.com/o/images%2F5.jpg?alt=media&token=fd67e279-2c02-4368-93f5-1fea11f4c758" />
+        <img src="https://firebasestorage.googleapis.com/v0/b/disneyplusc-63fdf.appspot.com/o/images%2F5.png?alt=media&token=854c3c04-fad3-4e33-9594-819c00b00976" />
       </Background>
       {/* <ImageTitle>
         <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78" />
