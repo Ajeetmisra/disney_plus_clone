@@ -7,9 +7,6 @@ import { Button, ProgressBar } from "react-bootstrap";
 
 function Movies() {
   const [moviess, setMoviess] = useState([]);
-  // useEffect(() => {
-  //   setMoviess(data.movies);
-  // }, []);
 
   useEffect(() => {
     // grabing all the mobies from database

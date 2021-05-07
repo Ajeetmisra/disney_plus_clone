@@ -24,8 +24,6 @@ const Detail = () => {
       });
   }, []);
 
-  console.log("movies is", moviess);
-
   return (
     <Container>
       {moviess && (
@@ -54,9 +52,11 @@ const Detail = () => {
       </Controls>
       <SubTitle>2018 • 7m • Family, Fantasy, Kids, Animation</SubTitle>
       <Description>
-        A Chinese mom who’s sad when her grown son leaves home gets another
-        chance at motherhood when one of her dumplings springs to life. But she
-        finds that nothing stays cute and small forever.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ligula
+        posuere, maximus massa id, maximus odio. Phasellus eu quam et dolor
+        viverra mollis. Sed sed ipsum rutrum nulla maximus pretium at eget
+        massa. Curabitur sit amet nunc dolor. Donec ac leo id purus venenatis
+        iaculis at nec enim
       </Description>
     </Container>
   );

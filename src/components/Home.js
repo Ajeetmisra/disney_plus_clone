@@ -6,7 +6,6 @@ import Viewers from "./Viewers";
 import data from "../moviesData.json";
 
 function Home() {
-  console.log("dataMovies", data);
   return (
     <Container>
       <ImageSlider />
