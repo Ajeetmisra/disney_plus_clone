@@ -26,7 +26,9 @@ const Detail = () => {
 
   return (
     <Container>
-      {moviess && (
+      {moviess.length === 0 ? (
+        "loding..."
+      ) : (
         <Background>
           <img src={moviess.backgroundImg} />
         </Background>
@@ -51,13 +53,19 @@ const Detail = () => {
         </GroupWatchButton>
       </Controls>
       <SubTitle>2018 • 7m • Family, Fantasy, Kids, Animation</SubTitle>
-      <Description>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ligula
-        posuere, maximus massa id, maximus odio. Phasellus eu quam et dolor
-        viverra mollis. Sed sed ipsum rutrum nulla maximus pretium at eget
-        massa. Curabitur sit amet nunc dolor. Donec ac leo id purus venenatis
-        iaculis at nec enim
-      </Description>
+      {moviess.length === 0 ? (
+        <Description>
+          <h1>Loding.......</h1>
+        </Description>
+      ) : (
+        <Description>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id ligula
+          posuere, maximus massa id, maximus odio. Phasellus eu quam et dolor
+          viverra mollis. Sed sed ipsum rutrum nulla maximus pretium at eget
+          massa. Curabitur sit amet nunc dolor. Donec ac leo id purus venenatis
+          iaculis at nec enim
+        </Description>
+      )}
     </Container>
   );
 };

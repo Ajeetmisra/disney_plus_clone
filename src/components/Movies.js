@@ -22,7 +22,7 @@ function Movies() {
       <h2>Recommended for you</h2>
       <Content>
         {moviess.length === 0 ? (
-          <ProgressBar striped variant="success" now={40} />
+          <h1>Loding.....</h1>
         ) : (
           moviess.map((movie) => (
             <Wraper key={movie.id}>
