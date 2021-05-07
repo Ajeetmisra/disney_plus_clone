@@ -2,29 +2,40 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import data from "../moviesData.json";
 import { useParams } from "react-router-dom";
+import db from "../firebase";
 
-function Detail() {
+const Detail = () => {
   const { id } = useParams();
 
   const [moviess, setMoviess] = useState([]);
-  const [idval, setIdval] = useState(0);
-  const filteringData = (id) => {
-    var arr = data.movies.filter((movie) => movie.id === id);
-    setMoviess(arr);
-  };
+
   useEffect(() => {
-    filteringData(id);
-    console.log("filtermovies", moviess);
+    // grab movie on the bases of id that we get from detail page
+    db.collection("movies")
+      .doc(id)
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          // save movies
+          setMoviess(doc.data());
+        } else {
+          // rdirect to home page
+        }
+      });
   }, []);
+
+  console.log("movies is", moviess);
 
   return (
     <Container>
-      <Background>
-        <img src="https://firebasestorage.googleapis.com/v0/b/disneyplusc-63fdf.appspot.com/o/images%2F5.png?alt=media&token=854c3c04-fad3-4e33-9594-819c00b00976" />
-      </Background>
-      {/* <ImageTitle>
-        <img src="https://prod-ripcut-delivery.disney-plus.net/v1/variant/disney/D7AEE1F05D10FC37C873176AAA26F777FC1B71E7A6563F36C6B1B497CAB1CEC2/scale?width=1440&aspectRatio=1.78" />
-      </ImageTitle> */}
+      {moviess && (
+        <Background>
+          <img src={moviess.backgroundImg} />
+        </Background>
+      )}
+      <ImageTitle>
+        <img src="/images/logo.svg" />
+      </ImageTitle>
       <Controls>
         <PlayButton>
           <img src="/images/play-icon-black.png" />
@@ -49,7 +60,7 @@ function Detail() {
       </Description>
     </Container>
   );
-}
+};
 
 export default Detail;
 
@@ -66,7 +77,7 @@ const Background = styled.div`
   bottom: 0;
   right: 0;
   z-index: -1;
-  opacity: 0.8;
+  opacity: 1;
   img {
     width: 100%;
     height: 100%;

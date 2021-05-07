@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
     <Nav>
@@ -7,7 +9,9 @@ function Header() {
       <NavMenu>
         <a>
           <img src="/images/home-icon.svg" alt="" />
-          <span>Home</span>
+          <Link to="/">
+            <span>Home</span>
+          </Link>
         </a>
         <a>
           <img src="/images/search-icon.svg" alt="" />

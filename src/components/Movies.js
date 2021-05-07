@@ -12,6 +12,7 @@ function Movies() {
   // }, []);
 
   useEffect(() => {
+    // grabing all the mobies from database
     db.collection("movies").onSnapshot((snapshot) => {
       let temMovies = snapshot.docs.map((doc) => {
         return { id: doc.id, ...doc.data() };
@@ -24,7 +25,7 @@ function Movies() {
       <h2>Recommended for you</h2>
       <Content>
         {moviess.length === 0 ? (
-          <h1>Loading Please Wait.....</h1>
+          <ProgressBar striped variant="success" now={40} />
         ) : (
           moviess.map((movie) => (
             <Wraper key={movie.id}>
